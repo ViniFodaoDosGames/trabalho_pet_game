@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SingleShoot" load_steps=4 format=3 uid="uid://5bg2v8u0uqv8"]
+
+[ext_resource type="PackedScene" uid="uid://bm8vw5uyvasxl" path="res://scenes/projectile.tscn" id="1_8j74x"]
+[ext_resource type="Script" uid="uid://ckb0g10ovujgg" path="res://scripts/SingleShot.gd" id="2_8ir4a"]
+[ext_resource type="Texture2D" uid="uid://d4c75vxpdv08p" path="res://assets/Gun_Sprites_Bullet_heaven.png" id="3_1m7ai"]
+
+[resource]
+script = ExtResource("2_8ir4a")
+title = "arma "
+texture = ExtResource("3_1m7ai")
+damage = 1.0
+cooldown = 0.3
+speed = 700.0
+projectile_node = ExtResource("1_8j74x")
+metadata/_custom_type_script = "uid://ckb0g10ovujgg"

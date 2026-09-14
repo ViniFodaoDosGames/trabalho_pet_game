@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://cet5vamndbsgn"]
+
+[ext_resource type="Script" uid="uid://q2wyx6i3qiuf" path="res://scripts/EnemyType.gd" id="1_1fr1c"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_30rpi"]
+size = Vector2(40, 40)
+
+[resource]
+script = ExtResource("1_1fr1c")
+title = "Inimigo_2"
+texture = SubResource("PlaceholderTexture2D_30rpi")
+health = 0.0
+damage = 5.0
+metadata/_custom_type_script = "uid://q2wyx6i3qiuf"
