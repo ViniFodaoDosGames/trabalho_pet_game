@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://s7yrk5ta1v0o"]
+[gd_scene format=3 uid="uid://s7yrk5ta1v0o"]
 
 [ext_resource type="Script" uid="uid://bufk3y3835cl5" path="res://scripts/spawner.gd" id="1_ik2nu"]
 [ext_resource type="PackedScene" uid="uid://cn2bs11uo8x7k" path="res://scenes/enemy.tscn" id="2_tx2ig"]
@@ -6,42 +6,43 @@
 [ext_resource type="Resource" uid="uid://ca7hqwek8swq6" path="res://resource/enemy/inimigo_1.tres" id="4_4wbs5"]
 [ext_resource type="Resource" uid="uid://cet5vamndbsgn" path="res://resource/enemy/inimigo_2.tres" id="5_30a77"]
 
-[node name="Spawner" type="Node2D"]
+[node name="Spawner" type="Node2D" unique_id=230584967]
 script = ExtResource("1_ik2nu")
 enemy = ExtResource("2_tx2ig")
 enemy_type = Array[ExtResource("3_cmhla")]([ExtResource("4_4wbs5"), ExtResource("5_30a77")])
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1878644168]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=851435603]
 offset_left = 371.0
 offset_right = 413.0
 offset_bottom = 39.0
 
-[node name="Minute" type="Label" parent="UI/HBoxContainer"]
+[node name="Minute" type="Label" parent="UI/HBoxContainer" unique_id=434315503]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer"]
+[node name="Label2" type="Label" parent="UI/HBoxContainer" unique_id=1376574048]
 layout_mode = 2
 text = ":"
 
-[node name="Second" type="Label" parent="UI/HBoxContainer"]
+[node name="Second" type="Label" parent="UI/HBoxContainer" unique_id=779275805]
 unique_name_in_owner = true
 layout_mode = 2
 text = "00"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1503913503]
 autostart = true
 
-[node name="Pattern" type="Timer" parent="."]
+[node name="Pattern" type="Timer" parent="." unique_id=2050390851]
 wait_time = 10.0
 autostart = true
 
-[node name="Elite" type="Timer" parent="."]
+[node name="Elite" type="Timer" parent="." unique_id=1931854087]
 wait_time = 9.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Pattern" to="." method="_on_pattern_timeout"]
+[connection signal="timeout" from="Elite" to="." method="_on_elite_timeout"]

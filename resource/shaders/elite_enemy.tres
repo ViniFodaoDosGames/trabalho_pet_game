@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cne0m6odkiag2"]
+
+[ext_resource type="Shader" uid="uid://uiuqaakhibop" path="res://resource/shaders/elite_enemy.gdshader" id="1_t0el7"]
+
+[resource]
+shader = ExtResource("1_t0el7")
+shader_parameter/line_thickness = 1.0
+shader_parameter/sin_frequency = 0.5
+shader_parameter/sin_offset = 0.0
+shader_parameter/light_offset = 0.5

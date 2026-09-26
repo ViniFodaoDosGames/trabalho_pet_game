@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SingleShoot" format=3 uid="uid://b5o07x2jcpfxs"]
+
+[ext_resource type="PackedScene" uid="uid://bm8vw5uyvasxl" path="res://scenes/projectile.tscn" id="1_yx3qj"]
+[ext_resource type="Texture2D" uid="uid://by7ep3oj7goia" path="res://assets/Desenho_sprite_123.png" id="2_mjbe6"]
+[ext_resource type="Script" uid="uid://ckb0g10ovujgg" path="res://scripts/SingleShot.gd" id="3_8ye3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j74x"]
+atlas = ExtResource("2_mjbe6")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ir4a"]
+atlas = ExtResource("2_mjbe6")
+region = Rect2(64, 64, 64, 64)
+
+[resource]
+script = ExtResource("3_8ye3n")
+title = "arma "
+texture = SubResource("AtlasTexture_8ir4a")
+projectile_texture = SubResource("AtlasTexture_8j74x")
+damage = 0.5
+cooldown = 0.1
+speed = 1000.0
+metadata/_custom_type_script = "uid://ckb0g10ovujgg"

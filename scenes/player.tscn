@@ -1,71 +1,98 @@
-[gd_scene load_steps=8 format=3 uid="uid://dinlwf5r6ni4v"]
+[gd_scene format=3 uid="uid://dinlwf5r6ni4v"]
 
 [ext_resource type="Script" uid="uid://dpfyihyf4g7ra" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://dkoujpieyju8n" path="res://scenes/slot.tscn" id="2_qhqgy"]
 [ext_resource type="Resource" uid="uid://5bg2v8u0uqv8" path="res://resource/Weapons/arma_1.tres" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://by7ep3oj7goia" path="res://assets/Desenho_sprite_123.png" id="4_dqkch"]
+[ext_resource type="Resource" uid="uid://b5o07x2jcpfxs" path="res://resource/Weapons/arma_2.tres" id="4_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
 radius = 8.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g2els"]
-size = Vector2(20, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jchci"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0, 0, 0, 0.83137256)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p1mj"]
+bg_color = Color(0.35754114, 0.69680536, 0.18996534, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
 
 [sub_resource type="GDScript" id="GDScript_3vyb7"]
 script/source = "extends ProgressBar
 "
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1842927415 groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_g2els")
 mov_speed = 40.0
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2007446956]
+visible = false
 
-[node name="Weapons" type="HBoxContainer" parent="UI"]
+[node name="Weapons" type="HBoxContainer" parent="UI" unique_id=315301886]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Slot" parent="UI/Weapons" instance=ExtResource("2_qhqgy")]
+[node name="Slot" parent="UI/Weapons" unique_id=1256420291 instance=ExtResource("2_qhqgy")]
 layout_mode = 2
 weapon = ExtResource("3_dqkch")
 
-[node name="Slot2" parent="UI/Weapons" instance=ExtResource("2_qhqgy")]
+[node name="Slot2" parent="UI/Weapons" unique_id=577717527 instance=ExtResource("2_qhqgy")]
+layout_mode = 2
+weapon = ExtResource("4_qlg0r")
+
+[node name="Slot3" parent="UI/Weapons" unique_id=1219129111 instance=ExtResource("2_qhqgy")]
 layout_mode = 2
 
-[node name="Slot3" parent="UI/Weapons" instance=ExtResource("2_qhqgy")]
-layout_mode = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=812487547]
 shape = SubResource("CircleShape2D_3vyb7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1406981529]
 texture_filter = 1
-texture = SubResource("PlaceholderTexture2D_g2els")
+position = Vector2(-2, 0)
+texture = SubResource("AtlasTexture_jchci")
 
-[node name="SelfDamage" type="Area2D" parent="."]
-position = Vector2(-1, 0)
+[node name="SelfDamage" type="Area2D" parent="." unique_id=1169207569]
 collision_layer = 0
 collision_mask = 2
 
-[node name="HurtBox" type="CollisionShape2D" parent="SelfDamage"]
+[node name="HurtBox" type="CollisionShape2D" parent="SelfDamage" unique_id=1516676282]
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_3vyb7")
 
-[node name="Health" type="ProgressBar" parent="."]
+[node name="Health" type="ProgressBar" parent="." unique_id=1158461757]
 unique_name_in_owner = true
-offset_left = -11.0
-offset_top = -18.0
-offset_right = 9.0
-offset_bottom = -11.0
-value = 0.01
+offset_left = -19.0
+offset_top = -42.0
+offset_right = 19.0
+offset_bottom = -35.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7p1mj")
+value = 100.0
 show_percentage = false
 script = SubResource("GDScript_3vyb7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1158355647]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=562225651]
 autostart = true
 
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]

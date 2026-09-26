@@ -1,12 +1,16 @@
-[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://ca7hqwek8swq6"]
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://ca7hqwek8swq6"]
 
 [ext_resource type="Script" uid="uid://q2wyx6i3qiuf" path="res://scripts/EnemyType.gd" id="1_y3edg"]
-[ext_resource type="Texture2D" uid="uid://d4c75vxpdv08p" path="res://assets/Gun_Sprites_Bullet_heaven.png" id="2_gc5br"]
+[ext_resource type="Texture2D" uid="uid://by7ep3oj7goia" path="res://assets/Desenho_sprite_123.png" id="2_xro4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvey2"]
+atlas = ExtResource("2_xro4n")
+region = Rect2(64, 0, 64, 64)
 
 [resource]
 script = ExtResource("1_y3edg")
 title = "Inimigo_1"
-texture = ExtResource("2_gc5br")
-health = 0.0
-damage = 1.0
+texture = SubResource("AtlasTexture_wvey2")
+health = 1.0
+damage = 2.0
 metadata/_custom_type_script = "uid://q2wyx6i3qiuf"

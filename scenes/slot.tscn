@@ -1,19 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkoujpieyju8n"]
+[gd_scene format=3 uid="uid://dkoujpieyju8n"]
 
 [ext_resource type="Script" uid="uid://b8j4hkj6hsyv2" path="res://scripts/slot.gd" id="1_4v6ba"]
 
-[node name="Slot" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v6ba"]
+bg_color = Color(0, 0, 0, 0.10980392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Slot" type="PanelContainer" unique_id=1341036530]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4v6ba")
 script = ExtResource("1_4v6ba")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=653243225]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Cooldown" type="Timer" parent="."]
+[node name="Cooldown" type="Timer" parent="." unique_id=1803883707]
 autostart = true
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

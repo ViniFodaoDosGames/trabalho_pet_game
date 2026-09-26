@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4c75vxpdv08p"
-path="res://.godot/imported/Gun_Sprites_Bullet_heaven.png-e43d0e488e61b3fdb7a5e1697da7b26c.ctex"
+uid="uid://by7ep3oj7goia"
+path="res://.godot/imported/Desenho_sprite_123.png-082a4d54bcf11b65d8e2a13af73fb5c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gun_Sprites_Bullet_heaven.png"
-dest_files=["res://.godot/imported/Gun_Sprites_Bullet_heaven.png-e43d0e488e61b3fdb7a5e1697da7b26c.ctex"]
+source_file="res://assets/Desenho_sprite_123.png"
+dest_files=["res://.godot/imported/Desenho_sprite_123.png-082a4d54bcf11b65d8e2a13af73fb5c0.ctex"]
 
 [params]
 

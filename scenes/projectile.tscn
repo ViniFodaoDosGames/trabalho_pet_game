@@ -1,25 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm8vw5uyvasxl"]
+[gd_scene format=3 uid="uid://bm8vw5uyvasxl"]
 
 [ext_resource type="Script" uid="uid://ddnhufim7nufd" path="res://scripts/projectile.gd" id="1_c8fcr"]
+[ext_resource type="Texture2D" uid="uid://by7ep3oj7goia" path="res://assets/Desenho_sprite_123.png" id="2_q3m7n"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_omewp"]
-size = Vector2(16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8fcr"]
+atlas = ExtResource("2_q3m7n")
+region = Rect2(64, 128, 64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xlj5"]
 size = Vector2(16, 16)
 
-[node name="Projectile" type="Area2D"]
+[node name="Projectile" type="Area2D" unique_id=1546273136]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_c8fcr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_omewp")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1795023087]
+unique_name_in_owner = true
+position = Vector2(-24, 0)
+texture = SubResource("AtlasTexture_c8fcr")
 
-[node name="HitBox" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="CollisionShape2D" parent="." unique_id=1450797149]
 shape = SubResource("RectangleShape2D_7xlj5")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2041913733]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
