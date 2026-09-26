@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://ced178n7h3sli"]
 
-[ext_resource type="Texture2D" uid="uid://bx22mj6ga088v" path="res://assets/Sprites_Bullet_heaven.png" id="1_iyx0m"]
-[ext_resource type="PackedScene" uid="uid://s7yrk5ta1v0o" path="res://scenes/spawner.tscn" id="2_bl13t"]
-[ext_resource type="PackedScene" uid="uid://dinlwf5r6ni4v" path="res://scenes/player.tscn" id="2_iyx0m"]
+[ext_resource type="Texture2D" uid="uid://bx22mj6ga088v" path="res://assets/Sprites_Bullet_heaven.png" id="1_j60hp"]
+[ext_resource type="PackedScene" uid="uid://dinlwf5r6ni4v" path="res://scenes/player.tscn" id="2_hrl3v"]
+[ext_resource type="PackedScene" uid="uid://s7yrk5ta1v0o" path="res://scenes/spawner.tscn" id="3_5ca1b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74lek"]
-texture = ExtResource("1_iyx0m")
+texture = ExtResource("1_j60hp")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -27,7 +27,7 @@ texture = ExtResource("1_iyx0m")
 sources/1 = SubResource("TileSetAtlasSource_74lek")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iyx0m"]
-texture = ExtResource("1_iyx0m")
+texture = ExtResource("1_j60hp")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -74,7 +74,12 @@ texture = ExtResource("1_iyx0m")
 [sub_resource type="TileSet" id="TileSet_74lek"]
 sources/0 = SubResource("TileSetAtlasSource_iyx0m")
 
-[node name="Test" type="Node2D" unique_id=110379723]
+[sub_resource type="LabelSettings" id="LabelSettings_gsr7l"]
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+
+[node name="Fase1" type="Node2D" unique_id=110379723]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=774773638]
 repeat_size = Vector2(1000, 640)
@@ -87,13 +92,32 @@ tile_set = SubResource("TileSet_j5jx5")
 tile_map_data = PackedByteArray("AABEACYAAAAEAAEAAAAoABgAAAAEAAEAAAAJACIAAAAEAAEAAABCAAQAAAAEAAEAAAATAAUAAAAEAAEAAAAEAA8AAAAEAAEAAAAdAB4AAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_74lek")
 
-[node name="Player" parent="." unique_id=858082603 instance=ExtResource("2_iyx0m")]
+[node name="Player" parent="." unique_id=858082603 instance=ExtResource("2_hrl3v")]
 position = Vector2(-541, -396)
 mov_speed = 170.0
 
-[node name="Spawner" parent="." unique_id=612819849 node_paths=PackedStringArray("player") instance=ExtResource("2_bl13t")]
+[node name="Spawner" parent="." unique_id=612819849 node_paths=PackedStringArray("player") instance=ExtResource("3_5ca1b")]
 position = Vector2(-748, 57)
 player = NodePath("../Player")
 
 [node name="EnemyHolder" type="Node2D" parent="." unique_id=1128426211]
 unique_name_in_owner = true
+
+[node name="TelaGameOver" type="CanvasLayer" parent="." unique_id=1595895695]
+unique_name_in_owner = true
+visible = false
+
+[node name="Label" type="Label" parent="TelaGameOver" unique_id=1546634412]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -11.5
+offset_right = 47.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fim de jogo!"
+label_settings = SubResource("LabelSettings_gsr7l")

@@ -11,9 +11,13 @@ var health : float = 100:
 	set(value):
 		health = value
 		%Health.value = value
+		if health <= 0:
+			player_morreu.emit()
 
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = INF
+
+signal player_morreu
 
 
 func _physics_process(delta: float) -> void:

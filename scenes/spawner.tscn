@@ -5,11 +5,15 @@
 [ext_resource type="Script" uid="uid://q2wyx6i3qiuf" path="res://scripts/EnemyType.gd" id="3_cmhla"]
 [ext_resource type="Resource" uid="uid://ca7hqwek8swq6" path="res://resource/enemy/inimigo_1.tres" id="4_4wbs5"]
 [ext_resource type="Resource" uid="uid://cet5vamndbsgn" path="res://resource/enemy/inimigo_2.tres" id="5_30a77"]
+[ext_resource type="Resource" uid="uid://cs1g27jwxao3p" path="res://resource/enemy/inimigo_3.tres" id="6_4wbs5"]
+
+[sub_resource type="Theme" id="Theme_kleqi"]
+Label/constants/outline_size = 5
 
 [node name="Spawner" type="Node2D" unique_id=230584967]
 script = ExtResource("1_ik2nu")
 enemy = ExtResource("2_tx2ig")
-enemy_type = Array[ExtResource("3_cmhla")]([ExtResource("4_4wbs5"), ExtResource("5_30a77")])
+enemy_type = Array[ExtResource("3_cmhla")]([ExtResource("4_4wbs5"), ExtResource("5_30a77"), ExtResource("6_4wbs5")])
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1878644168]
 
@@ -17,6 +21,7 @@ enemy_type = Array[ExtResource("3_cmhla")]([ExtResource("4_4wbs5"), ExtResource(
 offset_left = 371.0
 offset_right = 413.0
 offset_bottom = 39.0
+theme = SubResource("Theme_kleqi")
 
 [node name="Minute" type="Label" parent="UI/HBoxContainer" unique_id=434315503]
 unique_name_in_owner = true

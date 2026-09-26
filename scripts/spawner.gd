@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var player : CharacterBody2D
+@export var player : PlayerController
 @export var enemy : PackedScene
 
 var distance : float = randf_range(900, 1200)
@@ -21,6 +21,16 @@ var second : int:
 				minute +=1
 			%Second.text = str(second).lpad(1,"0")
 			
+
+func _ready():
+	player.player_morreu.connect(game_over)
+
+func game_over():
+	%TelaGameOver.show()
+	#player.process_mode = Node.PROCESS_MODE_DISABLED
+	#player.set_process(false)
+	player.call_deferred("set_process_mode", Node.PROCESS_MODE_DISABLED)
+
 func _physics_process(_delta: float) -> void:
 	if get_tree().get_node_count_in_group("Enemy") < 700:
 		can_spawn = true

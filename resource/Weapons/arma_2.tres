@@ -14,7 +14,7 @@ region = Rect2(64, 64, 64, 64)
 
 [resource]
 script = ExtResource("3_8ye3n")
-title = "arma "
+title = "arma guarda-chuva"
 texture = SubResource("AtlasTexture_8ir4a")
 projectile_texture = SubResource("AtlasTexture_8j74x")
 damage = 0.5
