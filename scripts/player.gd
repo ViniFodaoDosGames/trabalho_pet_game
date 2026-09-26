@@ -36,5 +36,5 @@ func _on_self_damage_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	%HurtBox.set_deferred("disabled", true);
-	%HurtBox.set_deferred("disabled", false);
+	%HurtBox.set_deferred("disabled", true)
+	%HurtBox.set_deferred("disabled", false)

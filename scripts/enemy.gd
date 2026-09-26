@@ -55,9 +55,10 @@ func check_separation(_delta: float) -> void:
 		
 	if separation < player_reference.nearest_enemy_distance:
 		player_reference.nearest_enemy = self
+		player_reference.nearest_enemy_distance = separation
 
-func knockback_update(delta: float) -> void: #função diferente, função separada
-	velocity = (player_reference.position - position).normalized() * speed ##movimentar em diração ao jogador
+func knockback_update(delta: float) -> void:
+	velocity = (player_reference.position - position).normalized() * speed 
 	knockback = knockback.move_toward(Vector2.ZERO, 1)
 	velocity += knockback
 

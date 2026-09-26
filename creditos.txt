@@ -5,3 +5,6 @@ https://www.youtube.com/watch?v=ihlMhk1DzQU&list=PLDvxSFN380vCpiHGee6p2cMHraP_f_
 
 Shader de arco-íris:
 https://godotshaders.com/shader/rainbow-outline/
+
+Demais artes:
+Autoria própria (Vinícius Lima)

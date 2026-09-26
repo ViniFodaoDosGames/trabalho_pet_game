@@ -5,11 +5,12 @@ class_name Weapon
 @export var texture: Texture2D
 @export var projectile_texture: Texture2D
 
-@export var damage: float;
-@export var cooldown: float;
-@export var speed: float;
+@export var damage: float
+@export var cooldown: float
+@export var speed: float
 
 @export var projectile_node: PackedScene = preload("res://scenes/projectile.tscn") #variável que carrega o node de projétil
 
-func activate(_source, _target, _scene_tree): # metodo abstrato
+# será sobrescrito pelas outras armas
+func activate(_source, _target, _scene_tree):
 	pass

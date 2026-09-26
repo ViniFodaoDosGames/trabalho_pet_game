@@ -3,17 +3,17 @@ class_name  SingleShoot
 
 func shoot(source, target, scene_tree):
 	if target == null:
-		return;
+		return
 	
-	var projectile = projectile_node.instantiate();
+	var projectile = projectile_node.instantiate()
 	
-	projectile.position = source.position;
-	projectile.damage = damage;
-	projectile.speed = speed;
+	projectile.position = source.position
+	projectile.damage = damage
+	projectile.speed = speed
 	projectile.set_sprite(projectile_texture)
-	projectile.direction = (target.position - source.position).normalized();
+	projectile.direction = (target.position - source.position).normalized()
 	
-	scene_tree.current_scene.add_child(projectile);
+	scene_tree.current_scene.add_child(projectile)
 
 func activate(source, target, scene_tree):
-	shoot(source, target, scene_tree);
+	shoot(source, target, scene_tree)
